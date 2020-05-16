@@ -20,11 +20,14 @@ public class MainActivity extends AppCompatActivity {
         SetBtn = (Button)findViewById(R.id.SetBtn);
         DbBtn = (Button)findViewById(R.id.DbBtn);
 
-        MainBtn.setOnClickListener(new View.OnClickListener() {
+        SetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 SetLocation setlocationfragment = new SetLocation();
+                transaction.replace(R.id.frame,setlocationfragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
 
             }
         });
