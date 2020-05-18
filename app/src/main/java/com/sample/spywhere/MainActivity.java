@@ -31,5 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        DbBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                ListLocation searchlocationfragment = new ListLocation();
+                transaction.replace(R.id.frame, searchlocationfragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
     }
 }
+
+
+
